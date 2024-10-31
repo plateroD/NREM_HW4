@@ -245,9 +245,9 @@ cat("Settling velocity (ws):", ws, "m/s\n")
 
 ``` r
 # Parameters from previous calculations
-u_star <- sqrt(g * R * slope)  # Shear velocity (already calculated in your code)
+u_star <- sqrt(g * R * slope)  # Shear velocity 
 z0 <- 3.5 * D84_m / 12.2       # Roughness height based on D84
-Ro <- ws / (kappa * u_star)    # Rouse number (already set up in your code)
+Ro <- ws / (kappa * u_star)    # Rouse number 
 
 # Define concentration profile function based on Rouse equation
 concentration_profile <- function(z) {
@@ -292,8 +292,8 @@ cat("Total suspended sand transport (kg/day):", total_flux_kg_day, "\n")
     ## Total suspended sand transport (kg/day): 14091.54
 
 ``` r
-# Constants and parameters (some may already be defined in your code)
-w <- 5.0                    # Channel width in meters (example value)
+# Constants and parameters
+w <- 9.85                    # Channel width in meters 
 g <- 9.81                   # Gravitational acceleration (m/s²)
 kappa <- 0.41               # von Karman constant
 Ca <- 1200 / 1e6            # Concentration at reference height in kg/m³ (1200 mg/L to kg/m³)
@@ -302,7 +302,7 @@ channel_depth <- 3.0        # Total depth of the channel in meters
 num_slices <- 100           # Number of depth slices for integration
 
 # Parameters from previous calculations
-u_star <- sqrt(g * R * slope)  # Shear velocity (already calculated in your code)
+u_star <- sqrt(g * R * slope)  # Shear velocity 
 z0 <- 3.5 * D84_m / 12.2       # Roughness height based on D84
 Ro <- ws / (kappa * u_star)    # Rouse number
 
@@ -346,14 +346,14 @@ Q_s_kg_day <- Q_s * 86400
 cat("Total suspended sand transport (Q_s) in kg/day:", Q_s_kg_day, "\n")
 ```
 
-    ## Total suspended sand transport (Q_s) in kg/day: 6543.856
+    ## Total suspended sand transport (Q_s) in kg/day: 12891.4
 
 ``` r
 # Constants and parameters
 h <- 3.0                      # Total water depth in meters
 z_ref <- 0.05                 # Reference height (m)
 Ca <- 1200 / 1e6              # Concentration at reference height in kg/m³
-Ro <- ws / (kappa * u_star)   # Rouse number (calculated previously)
+Ro <- ws / (kappa * u_star)   # Rouse number
 
 # Define a function for concentration profile based on Rouse equation
 concentration_profile <- function(z, h, a, Ro) {
@@ -376,7 +376,7 @@ plot(C_Ca_values, z_values / h, type = "l", col = "red", lwd = 2,
 h <- 3.0                      # Total water depth in meters
 z_ref <- 0.05                 # Reference height (m)
 Ca <- 1200 / 1e6              # Concentration at reference height in kg/m³
-Ro <- ws / (kappa * u_star)   # Rouse number (calculated previously)
+Ro <- ws / (kappa * u_star)   # Rouse number 
 
 # Define a function for concentration profile based on Rouse equation
 concentration_profile <- function(z, h, a, Ro) {
@@ -408,19 +408,3 @@ plot(Q_values, Qs_values, type = "l", col = "blue", lwd = 2,
 ```
 
 ![](Derrick_Platero_HW4_files/figure-gfm/Plot%202-1.png)<!-- -->
-
-``` r
-# Define the width positions and depth slices (inverted depth)
-width_positions <- c(0, 2.5, 4, 5, 6, 6.3, 7.3, 8.6, 9.85, 0)
-depth_slices <- c(0, -1.1, -2.5, -4.0, -5.0, -6.0, -6.3, -7.3, -8.6, 0)
-
-# Create the plot
-plot(width_positions, depth_slices, type = "l", col = "blue", lwd = 2,
-     xlab = "Width Position (m)", ylab = "Depth (m)",
-     main = "Cross Section of a River")
-
-# Add grid lines for better visualization
-grid()
-```
-
-![](Derrick_Platero_HW4_files/figure-gfm/Plot%203-1.png)<!-- -->
