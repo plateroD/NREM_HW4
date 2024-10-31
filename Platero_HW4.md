@@ -239,8 +239,8 @@ cat("Total bedload transport for D84 over one day (kg/m):", total_bedload_D84, "
 g <- 9.81                  # Gravitational acceleration (m/s²)
 kappa <- 0.41              # von Karman constant
 Ca <- 1200 / 1e6           # Concentration at reference height in kg/m³ (1200 mg/L to kg/m³)
-z_ref <- 0.05              # Reference height in meters (5 cm)
-channel_depth <- 3.0       # Total depth of the channel in meters (example value)
+z_ref <- 0.05              # Reference height in meters 5 cm
+channel_depth <- 3.5       # Total depth of the channel in m
 num_slices <- 100          # Number of depth slices for integration
 
 # Constants for ws-settling velocity calculation
