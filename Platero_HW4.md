@@ -14,6 +14,7 @@ includes both content as well as the output of any embedded R code
 chunks within the document. You can embed an R code chunk like this:
 
 ``` r
+# Cross sectional area
 # Define the data
 width_positions <- c(0, 2.5, 4, 5, 6, 6.3, 7.3, 8.6, 9.85)  # Width positions (x)
 depths <- c(0, 1.1, 2.5, 4.0, 5.0, 6.0, 6.3, 7.3, 8.6)      # Corresponding depths (y)
@@ -43,6 +44,7 @@ cat("Total Cross-Sectional Area:", total_area, "m^2\n")
 ```
 
 ``` r
+# Question 1a
 # Manning’s Equation and Discharge Calculation
 # Define the known values
 wetted_perimeter <- 10.7  # Wetted perimeter (P) in meters
@@ -85,6 +87,7 @@ cat("Bankfull Discharge (Q):", discharge, "m^3/s\n")
 ```
 
 ``` r
+# Question 1b
 # constants and values
 rho_w <- 1000  # Fluid density (kg/m³) for water at standard temp. and pressure ( 4C)
 g <- 9.81      # Gravitational acceleration (m/s²)
@@ -106,6 +109,7 @@ cat("Mean Bed Shear Stress (τ):", tau, "Pa\n")
 ```
 
 ``` r
+# QUESTION 2
 library(readr)
 library(dplyr)
 ```
@@ -235,6 +239,7 @@ cat("Total bedload transport for D84 over one day (kg/m):", total_bedload_D84, "
     ## Total bedload transport for D84 over one day (kg/m): 52986722
 
 ``` r
+# Question 3
 # Constants and parameters
 g <- 9.81                  # Gravitational acceleration (m/s²)
 kappa <- 0.41              # von Karman constant
