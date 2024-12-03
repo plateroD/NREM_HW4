@@ -1,0 +1,632 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={HW 4},
+  pdfauthor={Derrick Platero},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{HW 4}
+\author{Derrick Platero}
+\date{2024-10-30}
+
+\begin{document}
+\maketitle
+
+\subsection{R Markdown}\label{r-markdown}
+
+This is an R Markdown document. Markdown is a simple formatting syntax
+for authoring HTML, PDF, and MS Word documents. For more details on
+using R Markdown see \url{http://rmarkdown.rstudio.com}.
+
+When you click the \textbf{Knit} button a document will be generated
+that includes both content as well as the output of any embedded R code
+chunks within the document. You can embed an R code chunk like this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define the data}
+\NormalTok{width\_positions }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{, }\FloatTok{6.3}\NormalTok{, }\FloatTok{7.3}\NormalTok{, }\FloatTok{8.6}\NormalTok{, }\FloatTok{9.85}\NormalTok{)  }\CommentTok{\# Width positions (x)}
+\NormalTok{depths }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.1}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\FloatTok{4.0}\NormalTok{, }\FloatTok{5.0}\NormalTok{, }\FloatTok{6.0}\NormalTok{, }\FloatTok{6.3}\NormalTok{, }\FloatTok{7.3}\NormalTok{, }\FloatTok{8.6}\NormalTok{)      }\CommentTok{\# Corresponding depths (y)}
+
+\CommentTok{\# Initialize total area variable}
+\NormalTok{total\_area }\OtherTok{\textless{}{-}} \DecValTok{0}
+
+\CommentTok{\# Loop through each segment to calculate trapezoidal area}
+\CommentTok{\# since there are multiple \textquotesingle{}width/depth\textquotesingle{} measurements}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{2}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(width\_positions)) \{}
+  \CommentTok{\# Calculate the width and average depth for each segment}
+\NormalTok{  dx }\OtherTok{\textless{}{-}}\NormalTok{ width\_positions[i] }\SpecialCharTok{{-}}\NormalTok{ width\_positions[i }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{]}
+\NormalTok{  avg\_depth }\OtherTok{\textless{}{-}}\NormalTok{ (depths[i] }\SpecialCharTok{+}\NormalTok{ depths[i }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{]) }\SpecialCharTok{/} \DecValTok{2}
+  
+  \CommentTok{\# Add the area of the current trapezoid to the total area}
+\NormalTok{  total\_area }\OtherTok{\textless{}{-}}\NormalTok{ total\_area }\SpecialCharTok{+}\NormalTok{ (avg\_depth }\SpecialCharTok{*}\NormalTok{ dx)}
+\NormalTok{\}}
+
+\CommentTok{\# Print the total cross{-}sectional area}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Total Cross{-}Sectional Area:"}\NormalTok{, total\_area, }\StringTok{"m\^{}2}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Total Cross-Sectional Area: 38.4025 m^2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Total Cross{-}Sectional Area: 38.4025 m\^{}2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Manning’s Equation and Discharge Calculation}
+\CommentTok{\# Define the known values}
+\NormalTok{wetted\_perimeter }\OtherTok{\textless{}{-}} \FloatTok{10.7}  \CommentTok{\# Wetted perimeter (P) in meters}
+
+\CommentTok{\# Calculate the hydraulic radius (R = A (38.4025 m\^{}2) / P (10.7))}
+\NormalTok{hydraulic\_radius }\OtherTok{\textless{}{-}}\NormalTok{ total\_area }\SpecialCharTok{/}\NormalTok{ wetted\_perimeter}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Hydraulic Radius (R):"}\NormalTok{, hydraulic\_radius, }\StringTok{"m}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Hydraulic Radius (R): 3.589019 m
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Median Grain Size (D50) in meters}
+\NormalTok{D50 }\OtherTok{\textless{}{-}} \FloatTok{0.008}  \CommentTok{\# 8 mm in meters}
+
+\CommentTok{\# Calculate Manning\textquotesingle{}s roughness coefficient using Strickler\textquotesingle{}s method}
+\NormalTok{n\_strickler }\OtherTok{\textless{}{-}}\NormalTok{ (D50}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{)) }\SpecialCharTok{/}\NormalTok{ (hydraulic\_radius}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{))}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Manning\textquotesingle{}s Roughness Coefficient (n) using Strickler\textquotesingle{}s method:"}\NormalTok{, n\_strickler, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Manning's Roughness Coefficient (n) using Strickler's method: 0.3614257
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define the slope (S) and Manning\textquotesingle{}s roughness coefficient (n)}
+\NormalTok{slope }\OtherTok{\textless{}{-}} \FloatTok{0.0074}  \CommentTok{\# Water surface slope givem on lab day}
+                  \CommentTok{\# Manning\textquotesingle{}s roughness coefficient for a natural stream}
+                  \CommentTok{\# From the USGS Guide \& Strickler method for selecting Manning\textquotesingle{}s Roughness Coefficients}
+
+\CommentTok{\# Calculate the bankfull discharge using Manning\textquotesingle{}s equation with Strickler\textquotesingle{}s n}
+\NormalTok{discharge }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{/}\NormalTok{ n\_strickler) }\SpecialCharTok{*}\NormalTok{ total\_area }\SpecialCharTok{*}\NormalTok{ (hydraulic\_radius}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{2}\SpecialCharTok{/}\DecValTok{3}\NormalTok{)) }\SpecialCharTok{*}\NormalTok{ (slope}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{))}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Bankfull Discharge (Q):"}\NormalTok{, discharge, }\StringTok{"m\^{}3/s}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Bankfull Discharge (Q): 21.42595 m^3/s
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Hydraulic Radius (R): 3.589019 m}
+\CommentTok{\# Manning\textquotesingle{}s Roughness Coefficient (n) using Strickler\textquotesingle{}s method: 0.3614257 }
+\CommentTok{\# Bankfull Discharge (Q): 21.42595 m\^{}3/s}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# constants and values}
+\NormalTok{rho\_w }\OtherTok{\textless{}{-}} \DecValTok{1000}  \CommentTok{\# Fluid density (kg/m³) for water at standard temp. and pressure ( 4C)}
+\NormalTok{g }\OtherTok{\textless{}{-}} \FloatTok{9.81}      \CommentTok{\# Gravitational acceleration (m/s²)}
+\NormalTok{R }\OtherTok{\textless{}{-}} \FloatTok{3.589}     \CommentTok{\# Hydraulic radius (m)}
+\NormalTok{S }\OtherTok{\textless{}{-}} \FloatTok{0.0074}    \CommentTok{\# Water surface slope}
+\NormalTok{F }\OtherTok{\textless{}{-}} \DecValTok{1}         \CommentTok{\# Friction factor (assuming 1 for uniform flow)}
+
+\CommentTok{\# Calculate mean bed shear stress (tau) in Pascals}
+\NormalTok{tau }\OtherTok{\textless{}{-}}\NormalTok{ rho\_w }\SpecialCharTok{*}\NormalTok{ g }\SpecialCharTok{*}\NormalTok{ R }\SpecialCharTok{*}\NormalTok{ S }\SpecialCharTok{*}\NormalTok{ F}
+
+\CommentTok{\# Print the result}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Mean Bed Shear Stress (τ):"}\NormalTok{, tau, }\StringTok{"Pa}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Mean Bed Shear Stress (τ): 260.5399 Pa
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Mean Bed Shear Stress (τ): 260.5399 Pa}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readr)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load and process data}
+\NormalTok{pebble\_data }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"E:/sed trans dep/pammel fluvial pred pebbles.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 100 Columns: 4
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (4): GrainSize_mm_1, GrainSize_mm_2, GrainSize_mm_3, GrainSize_mm_4
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Combine data from all groups into one vector, converting to numeric}
+\NormalTok{all\_grain\_sizes }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}
+  \FunctionTok{as.numeric}\NormalTok{(pebble\_data}\SpecialCharTok{$}\NormalTok{GrainSize\_mm\_1),}
+  \FunctionTok{as.numeric}\NormalTok{(pebble\_data}\SpecialCharTok{$}\NormalTok{GrainSize\_mm\_2),}
+  \FunctionTok{as.numeric}\NormalTok{(pebble\_data}\SpecialCharTok{$}\NormalTok{GrainSize\_mm\_3),}
+  \FunctionTok{as.numeric}\NormalTok{(pebble\_data}\SpecialCharTok{$}\NormalTok{GrainSize\_mm\_4)}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: NAs introduced by coercion
+## Warning: NAs introduced by coercion
+## Warning: NAs introduced by coercion
+## Warning: NAs introduced by coercion
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Remove NA values (from non{-}numeric entries like \textquotesingle{}Fines\textquotesingle{} and \textquotesingle{}Sand\textquotesingle{})}
+\NormalTok{all\_grain\_sizes }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(all\_grain\_sizes)}
+
+\CommentTok{\# Calculate D50 (median grain size)}
+\NormalTok{D50 }\OtherTok{\textless{}{-}} \FunctionTok{median}\NormalTok{(all\_grain\_sizes)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Median Grain Size (D50):"}\NormalTok{, D50, }\StringTok{"mm}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Median Grain Size (D50): 8 mm
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate D84 (84th percentile grain size)}
+\NormalTok{D84 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(all\_grain\_sizes, }\FloatTok{0.84}\NormalTok{)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"84th Percentile Grain Size (D84):"}\NormalTok{, D84, }\StringTok{"mm}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 84th Percentile Grain Size (D84): 16 mm
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Convert grain sizes to meters for further calculations}
+\NormalTok{grain\_sizes\_m }\OtherTok{\textless{}{-}}\NormalTok{ all\_grain\_sizes }\SpecialCharTok{/} \DecValTok{1000}  \CommentTok{\# mm to meters}
+\NormalTok{D50\_m }\OtherTok{\textless{}{-}}\NormalTok{ D50 }\SpecialCharTok{/} \DecValTok{1000}
+\NormalTok{D84\_m }\OtherTok{\textless{}{-}}\NormalTok{ D84 }\SpecialCharTok{/} \DecValTok{1000}
+
+\CommentTok{\# Constants}
+\NormalTok{rho\_s }\OtherTok{\textless{}{-}} \DecValTok{2650}  \CommentTok{\# Sediment density (kg/m³) from sediment transport modelling in riverine environments}
+\NormalTok{rho }\OtherTok{\textless{}{-}} \DecValTok{1000}    \CommentTok{\# Water density (kg/m³)}
+\NormalTok{g }\OtherTok{\textless{}{-}} \FloatTok{9.81}      \CommentTok{\# Gravitational acceleration (m/s²)}
+\NormalTok{tau }\OtherTok{\textless{}{-}} \FloatTok{260.5399}  \CommentTok{\# Shear stress (Pa)}
+
+\CommentTok{\# Calculate critical Shields stress (tau\_c*) for each grain size}
+\NormalTok{tau\_c\_star }\OtherTok{\textless{}{-}} \FloatTok{0.086} \SpecialCharTok{*}\NormalTok{ (grain\_sizes\_m }\SpecialCharTok{/}\NormalTok{ D50\_m)}\SpecialCharTok{\^{}}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{0.9}\NormalTok{)}
+
+\CommentTok{\# Calculate Shields parameter for each grain size}
+\NormalTok{shields\_parameter }\OtherTok{\textless{}{-}}\NormalTok{ tau }\SpecialCharTok{/}\NormalTok{ ((rho\_s }\SpecialCharTok{{-}}\NormalTok{ rho) }\SpecialCharTok{*}\NormalTok{ g }\SpecialCharTok{*}\NormalTok{ grain\_sizes\_m)}
+
+\CommentTok{\# Determine which size fractions are mobile}
+\NormalTok{mobile\_fraction }\OtherTok{\textless{}{-}}\NormalTok{ grain\_sizes\_m[shields\_parameter }\SpecialCharTok{\textgreater{}}\NormalTok{ tau\_c\_star]}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Mobile grain sizes (m):"}\NormalTok{, mobile\_fraction, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Mobile grain sizes (m): 0.002 0.002 0.002 0.002 0.002 0.002 0.0028 0.0028 0.0028 0.0028 0.0028 0.0028 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.016 0.016 0.016 0.016 0.016 0.016 0.0226 0.0226 0.032 0.032 0.032 0.045 0.002 0.002 0.002 0.002 0.0028 0.0028 0.0028 0.0028 0.004 0.004 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.0226 0.0226 0.0226 0.0226 0.0226 0.0226 0.0226 0.032 0.032 0.032 0.045 0.128 0.0028 0.0028 0.0028 0.0028 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.0226 0.0226 0.0226 0.0028 0.0028 0.0028 0.0028 0.0028 0.0028 0.0028 0.004 0.004 0.004 0.004 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.0226 0.0226 0.0226 0.0226 0.0226 0.045 0.064
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate the fraction of the bed surface mobilized}
+\NormalTok{mobilized\_fraction }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(mobile\_fraction) }\SpecialCharTok{/} \FunctionTok{length}\NormalTok{(grain\_sizes\_m)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Fraction of bed surface mobilized:"}\NormalTok{, mobilized\_fraction, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Fraction of bed surface mobilized: 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate bedload transport rate using Recking’s formula (using D50)}
+\NormalTok{s }\OtherTok{\textless{}{-}}\NormalTok{ rho\_s }\SpecialCharTok{/}\NormalTok{ rho}
+\NormalTok{bedload\_transport\_D50 }\OtherTok{\textless{}{-}}\NormalTok{ tau }\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{(g }\SpecialCharTok{*}\NormalTok{ (s }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{) }\SpecialCharTok{*}\NormalTok{ (mobile\_fraction}\SpecialCharTok{\^{}}\DecValTok{3}\NormalTok{))}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Bedload transport rate (kg/s/m) for mobile fractions (D50):"}\NormalTok{, bedload\_transport\_D50, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Bedload transport rate (kg/s/m) for mobile fractions (D50): 0.09375527 0.09375527 0.09375527 0.09375527 0.09375527 0.09375527 0.1553058 0.1553058 0.1553058 0.1553058 0.1553058 0.1553058 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 3.56134 3.56134 6.000338 6.000338 6.000338 10.00621 0.09375527 0.09375527 0.09375527 0.09375527 0.1553058 0.1553058 0.1553058 0.1553058 0.26518 0.26518 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 3.56134 3.56134 3.56134 3.56134 3.56134 3.56134 3.56134 6.000338 6.000338 6.000338 10.00621 48.0027 0.1553058 0.1553058 0.1553058 0.1553058 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 3.56134 3.56134 3.56134 0.1553058 0.1553058 0.1553058 0.1553058 0.1553058 0.1553058 0.1553058 0.26518 0.26518 0.26518 0.26518 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 3.56134 3.56134 3.56134 3.56134 3.56134 10.00621 16.97152
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate bedload transport rate using D84 in Recking’s formula}
+\NormalTok{bedload\_transport\_D84 }\OtherTok{\textless{}{-}}\NormalTok{ rho\_s }\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{(g }\SpecialCharTok{*}\NormalTok{ (s }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)) }\SpecialCharTok{*}\NormalTok{ D84\_m }\SpecialCharTok{*}\NormalTok{ mobile\_fraction}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Bedload transport rate using D84 (kg/s/m):"}\NormalTok{, bedload\_transport\_D84, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Bedload transport rate using D84 (kg/s/m): 0.3411712 0.3411712 0.3411712 0.3411712 0.3411712 0.3411712 0.4776396 0.4776396 0.4776396 0.4776396 0.4776396 0.4776396 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 3.855234 3.855234 5.458739 5.458739 5.458739 7.676351 0.3411712 0.3411712 0.3411712 0.3411712 0.4776396 0.4776396 0.4776396 0.4776396 0.6823423 0.6823423 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 3.855234 3.855234 3.855234 3.855234 3.855234 3.855234 3.855234 5.458739 5.458739 5.458739 7.676351 21.83496 0.4776396 0.4776396 0.4776396 0.4776396 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 3.855234 3.855234 3.855234 0.4776396 0.4776396 0.4776396 0.4776396 0.4776396 0.4776396 0.4776396 0.6823423 0.6823423 0.6823423 0.6823423 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 3.855234 3.855234 3.855234 3.855234 3.855234 7.676351 10.91748
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate total bedload transport over one day (24 hours) for D50 and D84}
+\NormalTok{total\_bedload\_D50 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(bedload\_transport\_D50) }\SpecialCharTok{*} \DecValTok{86400}  \CommentTok{\# for 24 hours}
+\NormalTok{total\_bedload\_D84 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(bedload\_transport\_D84) }\SpecialCharTok{*} \DecValTok{86400}  \CommentTok{\# for 24 hours}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Total bedload transport for D50 over one day (kg/m):"}\NormalTok{, total\_bedload\_D50, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Total bedload transport for D50 over one day (kg/m): 41570564
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Total bedload transport for D84 over one day (kg/m):"}\NormalTok{, total\_bedload\_D84, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Total bedload transport for D84 over one day (kg/m): 52986722
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Constants and parameters}
+\NormalTok{g }\OtherTok{\textless{}{-}} \FloatTok{9.81}                  \CommentTok{\# Gravitational acceleration (m/s²)}
+\NormalTok{kappa }\OtherTok{\textless{}{-}} \FloatTok{0.41}              \CommentTok{\# von Karman constant}
+\NormalTok{Ca }\OtherTok{\textless{}{-}} \DecValTok{1200} \SpecialCharTok{/} \FloatTok{1e6}           \CommentTok{\# Concentration at reference height in kg/m³ (1200 mg/L to kg/m³)}
+\NormalTok{z\_ref }\OtherTok{\textless{}{-}} \FloatTok{0.05}              \CommentTok{\# Reference height in meters (5 cm)}
+\NormalTok{channel\_depth }\OtherTok{\textless{}{-}} \FloatTok{3.0}       \CommentTok{\# Total depth of the channel in meters (example value)}
+\NormalTok{num\_slices }\OtherTok{\textless{}{-}} \DecValTok{100}          \CommentTok{\# Number of depth slices for integration}
+
+\CommentTok{\# Constants for ws{-}settling velocity calculation}
+\NormalTok{rho\_s }\OtherTok{\textless{}{-}} \DecValTok{2650}         \CommentTok{\# Sediment density (kg/m³)}
+\NormalTok{rho }\OtherTok{\textless{}{-}} \DecValTok{1000}           \CommentTok{\# Water density (kg/m³)}
+\NormalTok{D }\OtherTok{\textless{}{-}} \FloatTok{0.187} \SpecialCharTok{/} \DecValTok{1000}     \CommentTok{\# Particle diameter in meters (0.187 mm)}
+\NormalTok{g }\OtherTok{\textless{}{-}} \FloatTok{9.81}             \CommentTok{\# Gravitational acceleration (m/s²)}
+\NormalTok{mu }\OtherTok{\textless{}{-}} \FloatTok{0.001}           \CommentTok{\# Dynamic viscosity of water (Pa·s)}
+
+\CommentTok{\# Calculate settling velocity (ws) using Stokes\textquotesingle{} law}
+\NormalTok{ws }\OtherTok{\textless{}{-}}\NormalTok{ ((rho\_s }\SpecialCharTok{{-}}\NormalTok{ rho) }\SpecialCharTok{*}\NormalTok{ g }\SpecialCharTok{*}\NormalTok{ D}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{) }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{18} \SpecialCharTok{*}\NormalTok{ mu)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Settling velocity (ws):"}\NormalTok{, ws, }\StringTok{"m/s}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Settling velocity (ws): 0.03144587 m/s
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Parameters from previous calculations}
+\NormalTok{u\_star }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(g }\SpecialCharTok{*}\NormalTok{ R }\SpecialCharTok{*}\NormalTok{ slope)  }\CommentTok{\# Shear velocity }
+\NormalTok{z0 }\OtherTok{\textless{}{-}} \FloatTok{3.5} \SpecialCharTok{*}\NormalTok{ D84\_m }\SpecialCharTok{/} \FloatTok{12.2}       \CommentTok{\# Roughness height based on D84}
+\NormalTok{Ro }\OtherTok{\textless{}{-}}\NormalTok{ ws }\SpecialCharTok{/}\NormalTok{ (kappa }\SpecialCharTok{*}\NormalTok{ u\_star)    }\CommentTok{\# Rouse number }
+
+\CommentTok{\# Define concentration profile function based on Rouse equation}
+\NormalTok{concentration\_profile }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(z) \{}
+\NormalTok{  Ca }\SpecialCharTok{*}\NormalTok{ (z\_ref }\SpecialCharTok{/}\NormalTok{ z)}\SpecialCharTok{\^{}}\NormalTok{Ro}
+\NormalTok{\}}
+
+\CommentTok{\# Define velocity profile function}
+\NormalTok{velocity\_profile }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(z) \{}
+\NormalTok{  u\_star }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{/}\NormalTok{ kappa) }\SpecialCharTok{*} \FunctionTok{log}\NormalTok{(z }\SpecialCharTok{/}\NormalTok{ z0)}
+\NormalTok{\}}
+
+\CommentTok{\# Discretize depth into slices}
+\NormalTok{slice\_heights }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(z0, channel\_depth, }\AttributeTok{length.out =}\NormalTok{ num\_slices)}
+\NormalTok{slice\_thickness }\OtherTok{\textless{}{-}} \FunctionTok{diff}\NormalTok{(slice\_heights)[}\DecValTok{1}\NormalTok{]  }\CommentTok{\# Uniform slice thickness}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Initialize total sediment flux}
+\NormalTok{total\_flux }\OtherTok{\textless{}{-}} \DecValTok{0}
+
+\CommentTok{\# Loop through each slice and calculate flux}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(num\_slices }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)) \{}
+  \CommentTok{\# Mid{-}point of each slice for better approximation}
+\NormalTok{  z\_mid }\OtherTok{\textless{}{-}}\NormalTok{ (slice\_heights[i] }\SpecialCharTok{+}\NormalTok{ slice\_heights[i }\SpecialCharTok{+} \DecValTok{1}\NormalTok{]) }\SpecialCharTok{/} \DecValTok{2}
+  
+  \CommentTok{\# Concentration and velocity at the mid{-}point}
+\NormalTok{  concentration }\OtherTok{\textless{}{-}} \FunctionTok{concentration\_profile}\NormalTok{(z\_mid)}
+\NormalTok{  velocity }\OtherTok{\textless{}{-}} \FunctionTok{velocity\_profile}\NormalTok{(z\_mid)}
+  
+  \CommentTok{\# Flux for this slice}
+\NormalTok{  flux\_slice }\OtherTok{\textless{}{-}}\NormalTok{ concentration }\SpecialCharTok{*}\NormalTok{ velocity }\SpecialCharTok{*}\NormalTok{ slice\_thickness}
+\NormalTok{  total\_flux }\OtherTok{\textless{}{-}}\NormalTok{ total\_flux }\SpecialCharTok{+}\NormalTok{ flux\_slice}
+\NormalTok{\}}
+
+\CommentTok{\# Convert to kg/day by multiplying with cross{-}sectional area and seconds per day}
+\NormalTok{cross\_sectional\_area }\OtherTok{\textless{}{-}}\NormalTok{ total\_area   }
+\NormalTok{total\_flux\_kg\_day }\OtherTok{\textless{}{-}}\NormalTok{ total\_flux }\SpecialCharTok{*}\NormalTok{ cross\_sectional\_area }\SpecialCharTok{*} \DecValTok{86400} \CommentTok{\# number of seconds in a day (86,400)}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Total suspended sand transport (kg/day):"}\NormalTok{, total\_flux\_kg\_day, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Total suspended sand transport (kg/day): 50260.09
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Constants and parameters}
+\NormalTok{w }\OtherTok{\textless{}{-}} \FloatTok{9.85}                    \CommentTok{\# Channel width in meters }
+\NormalTok{g }\OtherTok{\textless{}{-}} \FloatTok{9.81}                   \CommentTok{\# Gravitational acceleration (m/s²)}
+\NormalTok{kappa }\OtherTok{\textless{}{-}} \FloatTok{0.41}               \CommentTok{\# von Karman constant}
+\NormalTok{Ca }\OtherTok{\textless{}{-}} \DecValTok{1200} \SpecialCharTok{/} \FloatTok{1e6}            \CommentTok{\# Concentration at reference height in kg/m³ (1200 mg/L to kg/m³)}
+\NormalTok{z\_ref }\OtherTok{\textless{}{-}} \FloatTok{0.05}               \CommentTok{\# Reference height in meters (5 cm)}
+\NormalTok{channel\_depth }\OtherTok{\textless{}{-}} \FloatTok{3.0}        \CommentTok{\# Total depth of the channel in meters}
+\NormalTok{num\_slices }\OtherTok{\textless{}{-}} \DecValTok{100}           \CommentTok{\# Number of depth slices for integration}
+
+\CommentTok{\# Parameters from previous calculations}
+\NormalTok{u\_star }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(g }\SpecialCharTok{*}\NormalTok{ R }\SpecialCharTok{*}\NormalTok{ slope)  }\CommentTok{\# Shear velocity }
+\NormalTok{z0 }\OtherTok{\textless{}{-}} \FloatTok{3.5} \SpecialCharTok{*}\NormalTok{ D84\_m }\SpecialCharTok{/} \FloatTok{12.2}       \CommentTok{\# Roughness height based on D84}
+\NormalTok{Ro }\OtherTok{\textless{}{-}}\NormalTok{ ws }\SpecialCharTok{/}\NormalTok{ (kappa }\SpecialCharTok{*}\NormalTok{ u\_star)    }\CommentTok{\# Rouse number}
+
+\CommentTok{\# Define concentration profile function based on Rouse equation}
+\NormalTok{concentration\_profile }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(z) \{}
+\NormalTok{  Ca }\SpecialCharTok{*}\NormalTok{ (z\_ref }\SpecialCharTok{/}\NormalTok{ z)}\SpecialCharTok{\^{}}\NormalTok{Ro}
+\NormalTok{\}}
+
+\CommentTok{\# Define velocity profile function (logarithmic)}
+\NormalTok{velocity\_profile }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(z) \{}
+\NormalTok{  u\_star }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{/}\NormalTok{ kappa) }\SpecialCharTok{*} \FunctionTok{log}\NormalTok{(z }\SpecialCharTok{/}\NormalTok{ z0)}
+\NormalTok{\}}
+
+\CommentTok{\# Discretize depth into slices}
+\NormalTok{slice\_heights }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(z0, channel\_depth, }\AttributeTok{length.out =}\NormalTok{ num\_slices)}
+\NormalTok{slice\_thickness }\OtherTok{\textless{}{-}} \FunctionTok{diff}\NormalTok{(slice\_heights)[}\DecValTok{1}\NormalTok{]  }\CommentTok{\# Uniform slice thickness}
+
+\CommentTok{\# Initialize total sediment flux per unit width}
+\NormalTok{q\_s }\OtherTok{\textless{}{-}} \DecValTok{0}
+
+\CommentTok{\# Loop through each slice and calculate concentration * velocity at the midpoint}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(num\_slices }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)) \{}
+  \CommentTok{\# Midpoint of each slice for better approximation}
+\NormalTok{  z\_mid }\OtherTok{\textless{}{-}}\NormalTok{ (slice\_heights[i] }\SpecialCharTok{+}\NormalTok{ slice\_heights[i }\SpecialCharTok{+} \DecValTok{1}\NormalTok{]) }\SpecialCharTok{/} \DecValTok{2}
+  
+  \CommentTok{\# Calculate concentration and velocity at the midpoint}
+\NormalTok{  concentration }\OtherTok{\textless{}{-}} \FunctionTok{concentration\_profile}\NormalTok{(z\_mid)}
+\NormalTok{  velocity }\OtherTok{\textless{}{-}} \FunctionTok{velocity\_profile}\NormalTok{(z\_mid)}
+  
+  \CommentTok{\# Flux contribution for this slice}
+\NormalTok{  flux\_slice }\OtherTok{\textless{}{-}}\NormalTok{ concentration }\SpecialCharTok{*}\NormalTok{ velocity }\SpecialCharTok{*}\NormalTok{ slice\_thickness}
+\NormalTok{  q\_s }\OtherTok{\textless{}{-}}\NormalTok{ q\_s }\SpecialCharTok{+}\NormalTok{ flux\_slice}
+\NormalTok{\}}
+
+\CommentTok{\# Scale by channel width to get total suspended load flux Q\_s}
+\NormalTok{Q\_s }\OtherTok{\textless{}{-}}\NormalTok{ w }\SpecialCharTok{*}\NormalTok{ q\_s}
+
+\CommentTok{\# Convert to kg/day by multiplying by seconds per day}
+\NormalTok{Q\_s\_kg\_day }\OtherTok{\textless{}{-}}\NormalTok{ Q\_s }\SpecialCharTok{*} \DecValTok{86400}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Total suspended sand transport (Q\_s) in kg/day:"}\NormalTok{, Q\_s\_kg\_day, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Total suspended sand transport (Q_s) in kg/day: 12891.4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Constants and parameters}
+\NormalTok{h }\OtherTok{\textless{}{-}} \FloatTok{3.0}                      \CommentTok{\# Total water depth in meters}
+\NormalTok{z\_ref }\OtherTok{\textless{}{-}} \FloatTok{0.05}                 \CommentTok{\# Reference height (m)}
+\NormalTok{Ca }\OtherTok{\textless{}{-}} \DecValTok{1200} \SpecialCharTok{/} \FloatTok{1e6}              \CommentTok{\# Concentration at reference height in kg/m³}
+\NormalTok{Ro }\OtherTok{\textless{}{-}}\NormalTok{ ws }\SpecialCharTok{/}\NormalTok{ (kappa }\SpecialCharTok{*}\NormalTok{ u\_star)   }\CommentTok{\# Rouse number}
+
+\CommentTok{\# Define a function for concentration profile based on Rouse equation}
+\NormalTok{concentration\_profile }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(z, h, a, Ro) \{}
+\NormalTok{  (h }\SpecialCharTok{{-}}\NormalTok{ z) }\SpecialCharTok{/}\NormalTok{ z }\SpecialCharTok{*}\NormalTok{ (a }\SpecialCharTok{/}\NormalTok{ (h }\SpecialCharTok{{-}}\NormalTok{ a))}\SpecialCharTok{\^{}}\NormalTok{Ro}
+\NormalTok{\}}
+
+\CommentTok{\# Generate a sequence of depths from z\_ref to h}
+\NormalTok{z\_values }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(z\_ref, h, }\AttributeTok{length.out =} \DecValTok{100}\NormalTok{)}
+\NormalTok{C\_Ca\_values }\OtherTok{\textless{}{-}} \FunctionTok{concentration\_profile}\NormalTok{(z\_values, h, z\_ref, Ro)}
+
+\CommentTok{\# Plot normalized concentration profile}
+\FunctionTok{plot}\NormalTok{(C\_Ca\_values, z\_values }\SpecialCharTok{/}\NormalTok{ h, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{,}
+     \AttributeTok{xlab =} \StringTok{"C / Ca"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"z / H"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Concentration Profile with Depth"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Platero_HW4-1--1-_files/figure-latex/plot 1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Constants and parameters}
+\NormalTok{h }\OtherTok{\textless{}{-}} \FloatTok{3.0}                      \CommentTok{\# Total water depth in meters}
+\NormalTok{z\_ref }\OtherTok{\textless{}{-}} \FloatTok{0.05}                 \CommentTok{\# Reference height (m)}
+\NormalTok{Ca }\OtherTok{\textless{}{-}} \DecValTok{1200} \SpecialCharTok{/} \FloatTok{1e6}              \CommentTok{\# Concentration at reference height in kg/m³}
+\NormalTok{Ro }\OtherTok{\textless{}{-}}\NormalTok{ ws }\SpecialCharTok{/}\NormalTok{ (kappa }\SpecialCharTok{*}\NormalTok{ u\_star)   }\CommentTok{\# Rouse number }
+
+\CommentTok{\# Define a function for concentration profile based on Rouse equation}
+\NormalTok{concentration\_profile }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(z, h, a, Ro) \{}
+\NormalTok{  (h }\SpecialCharTok{{-}}\NormalTok{ z) }\SpecialCharTok{/}\NormalTok{ z }\SpecialCharTok{*}\NormalTok{ (a }\SpecialCharTok{/}\NormalTok{ (h }\SpecialCharTok{{-}}\NormalTok{ a))}\SpecialCharTok{\^{}}\NormalTok{Ro}
+\NormalTok{\}}
+
+\CommentTok{\# Generate a sequence of depths from z\_ref to h}
+\NormalTok{z\_values }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(z\_ref, h, }\AttributeTok{length.out =} \DecValTok{100}\NormalTok{)}
+\NormalTok{C\_Ca\_values }\OtherTok{\textless{}{-}} \FunctionTok{concentration\_profile}\NormalTok{(z\_values, h, z\_ref, Ro)}
+
+\CommentTok{\# Plot normalized concentration profile}
+\FunctionTok{plot}\NormalTok{(C\_Ca\_values, z\_values }\SpecialCharTok{/}\NormalTok{ h, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{,}
+     \AttributeTok{xlab =} \StringTok{"C / Ca"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"z / H"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Concentration Profile with Depth"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Empirical constants (example values)}
+\NormalTok{a }\OtherTok{\textless{}{-}} \FloatTok{0.1}   \CommentTok{\# coefficient}
+\NormalTok{b }\OtherTok{\textless{}{-}} \FloatTok{1.7}   \CommentTok{\# exponent (for fine sediment discharge)}
+
+\CommentTok{\# Generate a range of flow discharge values}
+\NormalTok{Q\_values }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{30}\NormalTok{, }\AttributeTok{by =} \DecValTok{1}\NormalTok{)  }\CommentTok{\# Discharge values in m³/s}
+\NormalTok{Qs\_values }\OtherTok{\textless{}{-}}\NormalTok{ a }\SpecialCharTok{*}\NormalTok{ Q\_values}\SpecialCharTok{\^{}}\NormalTok{b     }\CommentTok{\# Calculate Qs for each Q}
+
+\CommentTok{\# Plot sediment discharge vs flow discharge}
+\FunctionTok{plot}\NormalTok{(Q\_values, Qs\_values, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{,}
+     \AttributeTok{xlab =} \StringTok{"Flow Discharge (Q, m³/s)"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Sediment Discharge (Q\_s, metric tons/event)"}\NormalTok{,}
+     \AttributeTok{main =} \StringTok{"Sediment Discharge vs Flow Discharge"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Platero_HW4-1--1-_files/figure-latex/Plot 2-1.pdf}
+
+\end{document}

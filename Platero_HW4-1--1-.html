@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="hw-4">HW 4</h1>
+<p>Derrick Platero 2024-10-30</p>
+<h2 id="r-markdown">R Markdown</h2>
+<p>This is an R Markdown document. Markdown is a simple formatting
+syntax for authoring HTML, PDF, and MS Word documents. For more details
+on using R Markdown see <a href="http://rmarkdown.rstudio.com">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be
+generated that includes both content as well as the output of any
+embedded R code chunks within the document. You can embed an R code
+chunk like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tinytex&quot;</span>)</span></code></pre></div>
+<pre><code>## Error in install.packages : Updating loaded packages</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Define the data</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>width_positions <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">2.5</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="fl">6.3</span>, <span class="fl">7.3</span>, <span class="fl">8.6</span>, <span class="fl">9.85</span>)  <span class="co"># Width positions (x)</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>depths <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.1</span>, <span class="fl">2.5</span>, <span class="fl">4.0</span>, <span class="fl">5.0</span>, <span class="fl">6.0</span>, <span class="fl">6.3</span>, <span class="fl">7.3</span>, <span class="fl">8.6</span>)      <span class="co"># Corresponding depths (y)</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co"># Initialize total area variable</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>total_area <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co"># Loop through each segment to calculate trapezoidal area</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co"># since there are multiple &#39;width/depth&#39; measurements</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">length</span>(width_positions)) {</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>  <span class="co"># Calculate the width and average depth for each segment</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  dx <span class="ot">&lt;-</span> width_positions[i] <span class="sc">-</span> width_positions[i <span class="sc">-</span> <span class="dv">1</span>]</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>  avg_depth <span class="ot">&lt;-</span> (depths[i] <span class="sc">+</span> depths[i <span class="sc">-</span> <span class="dv">1</span>]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>  </span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>  <span class="co"># Add the area of the current trapezoid to the total area</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>  total_area <span class="ot">&lt;-</span> total_area <span class="sc">+</span> (avg_depth <span class="sc">*</span> dx)</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>}</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co"># Print the total cross-sectional area</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total Cross-Sectional Area:&quot;</span>, total_area, <span class="st">&quot;m^2</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Total Cross-Sectional Area: 38.4025 m^2</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Total Cross-Sectional Area: 38.4025 m^2</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Manning’s Equation and Discharge Calculation</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># Define the known values</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>wetted_perimeter <span class="ot">&lt;-</span> <span class="fl">10.7</span>  <span class="co"># Wetted perimeter (P) in meters</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co"># Calculate the hydraulic radius (R = A (38.4025 m^2) / P (10.7))</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>hydraulic_radius <span class="ot">&lt;-</span> total_area <span class="sc">/</span> wetted_perimeter</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Hydraulic Radius (R):&quot;</span>, hydraulic_radius, <span class="st">&quot;m</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Hydraulic Radius (R): 3.589019 m</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Median Grain Size (D50) in meters</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>D50 <span class="ot">&lt;-</span> <span class="fl">0.008</span>  <span class="co"># 8 mm in meters</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co"># Calculate Manning&#39;s roughness coefficient using Strickler&#39;s method</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>n_strickler <span class="ot">&lt;-</span> (D50<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>)) <span class="sc">/</span> (hydraulic_radius<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>))</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Manning&#39;s Roughness Coefficient (n) using Strickler&#39;s method:&quot;</span>, n_strickler, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Manning&#39;s Roughness Coefficient (n) using Strickler&#39;s method: 0.3614257</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Define the slope (S) and Manning&#39;s roughness coefficient (n)</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>slope <span class="ot">&lt;-</span> <span class="fl">0.0074</span>  <span class="co"># Water surface slope givem on lab day</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>                  <span class="co"># Manning&#39;s roughness coefficient for a natural stream</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>                  <span class="co"># From the USGS Guide &amp; Strickler method for selecting Manning&#39;s Roughness Coefficients</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co"># Calculate the bankfull discharge using Manning&#39;s equation with Strickler&#39;s n</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>discharge <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">/</span> n_strickler) <span class="sc">*</span> total_area <span class="sc">*</span> (hydraulic_radius<span class="sc">^</span>(<span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>)) <span class="sc">*</span> (slope<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Bankfull Discharge (Q):&quot;</span>, discharge, <span class="st">&quot;m^3/s</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Bankfull Discharge (Q): 21.42595 m^3/s</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Hydraulic Radius (R): 3.589019 m</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co"># Manning&#39;s Roughness Coefficient (n) using Strickler&#39;s method: 0.3614257 </span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co"># Bankfull Discharge (Q): 21.42595 m^3/s</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># constants and values</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>rho_w <span class="ot">&lt;-</span> <span class="dv">1000</span>  <span class="co"># Fluid density (kg/m³) for water at standard temp. and pressure ( 4C)</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fl">9.81</span>      <span class="co"># Gravitational acceleration (m/s²)</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fl">3.589</span>     <span class="co"># Hydraulic radius (m)</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fl">0.0074</span>    <span class="co"># Water surface slope</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="dv">1</span>         <span class="co"># Friction factor (assuming 1 for uniform flow)</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co"># Calculate mean bed shear stress (tau) in Pascals</span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>tau <span class="ot">&lt;-</span> rho_w <span class="sc">*</span> g <span class="sc">*</span> R <span class="sc">*</span> S <span class="sc">*</span> F</span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co"># Print the result</span></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Mean Bed Shear Stress (τ):&quot;</span>, tau, <span class="st">&quot;Pa</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Mean Bed Shear Stress (τ): 260.5399 Pa</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Mean Bed Shear Stress (τ): 260.5399 Pa</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="co"># Load and process data</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>pebble_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;E:/sed trans dep/pammel fluvial pred pebbles.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 100 Columns: 4
+## ── Column specification ────────────────────────────────────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (4): GrainSize_mm_1, GrainSize_mm_2, GrainSize_mm_3, GrainSize_mm_4
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># Combine data from all groups into one vector, converting to numeric</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>all_grain_sizes <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>  <span class="fu">as.numeric</span>(pebble_data<span class="sc">$</span>GrainSize_mm_1),</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>  <span class="fu">as.numeric</span>(pebble_data<span class="sc">$</span>GrainSize_mm_2),</span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>  <span class="fu">as.numeric</span>(pebble_data<span class="sc">$</span>GrainSize_mm_3),</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>  <span class="fu">as.numeric</span>(pebble_data<span class="sc">$</span>GrainSize_mm_4)</span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## Warning: NAs introduced by coercion
+## Warning: NAs introduced by coercion
+## Warning: NAs introduced by coercion
+## Warning: NAs introduced by coercion</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Remove NA values (from non-numeric entries like &#39;Fines&#39; and &#39;Sand&#39;)</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>all_grain_sizes <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(all_grain_sizes)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="co"># Calculate D50 (median grain size)</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>D50 <span class="ot">&lt;-</span> <span class="fu">median</span>(all_grain_sizes)</span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Median Grain Size (D50):&quot;</span>, D50, <span class="st">&quot;mm</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Median Grain Size (D50): 8 mm</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># Calculate D84 (84th percentile grain size)</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>D84 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(all_grain_sizes, <span class="fl">0.84</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;84th Percentile Grain Size (D84):&quot;</span>, D84, <span class="st">&quot;mm</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 84th Percentile Grain Size (D84): 16 mm</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co"># Convert grain sizes to meters for further calculations</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>grain_sizes_m <span class="ot">&lt;-</span> all_grain_sizes <span class="sc">/</span> <span class="dv">1000</span>  <span class="co"># mm to meters</span></span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>D50_m <span class="ot">&lt;-</span> D50 <span class="sc">/</span> <span class="dv">1000</span></span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>D84_m <span class="ot">&lt;-</span> D84 <span class="sc">/</span> <span class="dv">1000</span></span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb24-7"><a href="#cb24-7" tabindex="-1"></a>rho_s <span class="ot">&lt;-</span> <span class="dv">2650</span>  <span class="co"># Sediment density (kg/m³) from sediment transport modelling in riverine environments</span></span>
+<span id="cb24-8"><a href="#cb24-8" tabindex="-1"></a>rho <span class="ot">&lt;-</span> <span class="dv">1000</span>    <span class="co"># Water density (kg/m³)</span></span>
+<span id="cb24-9"><a href="#cb24-9" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fl">9.81</span>      <span class="co"># Gravitational acceleration (m/s²)</span></span>
+<span id="cb24-10"><a href="#cb24-10" tabindex="-1"></a>tau <span class="ot">&lt;-</span> <span class="fl">260.5399</span>  <span class="co"># Shear stress (Pa)</span></span>
+<span id="cb24-11"><a href="#cb24-11" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" tabindex="-1"></a><span class="co"># Calculate critical Shields stress (tau_c*) for each grain size</span></span>
+<span id="cb24-13"><a href="#cb24-13" tabindex="-1"></a>tau_c_star <span class="ot">&lt;-</span> <span class="fl">0.086</span> <span class="sc">*</span> (grain_sizes_m <span class="sc">/</span> D50_m)<span class="sc">^</span>(<span class="sc">-</span><span class="fl">0.9</span>)</span>
+<span id="cb24-14"><a href="#cb24-14" tabindex="-1"></a></span>
+<span id="cb24-15"><a href="#cb24-15" tabindex="-1"></a><span class="co"># Calculate Shields parameter for each grain size</span></span>
+<span id="cb24-16"><a href="#cb24-16" tabindex="-1"></a>shields_parameter <span class="ot">&lt;-</span> tau <span class="sc">/</span> ((rho_s <span class="sc">-</span> rho) <span class="sc">*</span> g <span class="sc">*</span> grain_sizes_m)</span>
+<span id="cb24-17"><a href="#cb24-17" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" tabindex="-1"></a><span class="co"># Determine which size fractions are mobile</span></span>
+<span id="cb24-19"><a href="#cb24-19" tabindex="-1"></a>mobile_fraction <span class="ot">&lt;-</span> grain_sizes_m[shields_parameter <span class="sc">&gt;</span> tau_c_star]</span>
+<span id="cb24-20"><a href="#cb24-20" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Mobile grain sizes (m):&quot;</span>, mobile_fraction, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Mobile grain sizes (m): 0.002 0.002 0.002 0.002 0.002 0.002 0.0028 0.0028 0.0028 0.0028 0.0028 0.0028 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.016 0.016 0.016 0.016 0.016 0.016 0.0226 0.0226 0.032 0.032 0.032 0.045 0.002 0.002 0.002 0.002 0.0028 0.0028 0.0028 0.0028 0.004 0.004 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.0226 0.0226 0.0226 0.0226 0.0226 0.0226 0.0226 0.032 0.032 0.032 0.045 0.128 0.0028 0.0028 0.0028 0.0028 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.004 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.008 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.0226 0.0226 0.0226 0.0028 0.0028 0.0028 0.0028 0.0028 0.0028 0.0028 0.004 0.004 0.004 0.004 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0057 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.0113 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.0226 0.0226 0.0226 0.0226 0.0226 0.045 0.064</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="co"># Calculate the fraction of the bed surface mobilized</span></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>mobilized_fraction <span class="ot">&lt;-</span> <span class="fu">length</span>(mobile_fraction) <span class="sc">/</span> <span class="fu">length</span>(grain_sizes_m)</span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Fraction of bed surface mobilized:&quot;</span>, mobilized_fraction, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Fraction of bed surface mobilized: 1</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co"># Calculate bedload transport rate using Recking’s formula (using D50)</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>s <span class="ot">&lt;-</span> rho_s <span class="sc">/</span> rho</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>bedload_transport_D50 <span class="ot">&lt;-</span> tau <span class="sc">*</span> <span class="fu">sqrt</span>(g <span class="sc">*</span> (s <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> (mobile_fraction<span class="sc">^</span><span class="dv">3</span>))</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Bedload transport rate (kg/s/m) for mobile fractions (D50):&quot;</span>, bedload_transport_D50, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Bedload transport rate (kg/s/m) for mobile fractions (D50): 0.09375527 0.09375527 0.09375527 0.09375527 0.09375527 0.09375527 0.1553058 0.1553058 0.1553058 0.1553058 0.1553058 0.1553058 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 3.56134 3.56134 6.000338 6.000338 6.000338 10.00621 0.09375527 0.09375527 0.09375527 0.09375527 0.1553058 0.1553058 0.1553058 0.1553058 0.26518 0.26518 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 3.56134 3.56134 3.56134 3.56134 3.56134 3.56134 3.56134 6.000338 6.000338 6.000338 10.00621 48.0027 0.1553058 0.1553058 0.1553058 0.1553058 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.26518 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 0.7500422 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 3.56134 3.56134 3.56134 0.1553058 0.1553058 0.1553058 0.1553058 0.1553058 0.1553058 0.1553058 0.26518 0.26518 0.26518 0.26518 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 0.4510898 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 1.259124 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 2.12144 3.56134 3.56134 3.56134 3.56134 3.56134 10.00621 16.97152</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># Calculate bedload transport rate using D84 in Recking’s formula</span></span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>bedload_transport_D84 <span class="ot">&lt;-</span> rho_s <span class="sc">*</span> <span class="fu">sqrt</span>(g <span class="sc">*</span> (s <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">*</span> D84_m <span class="sc">*</span> mobile_fraction</span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Bedload transport rate using D84 (kg/s/m):&quot;</span>, bedload_transport_D84, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Bedload transport rate using D84 (kg/s/m): 0.3411712 0.3411712 0.3411712 0.3411712 0.3411712 0.3411712 0.4776396 0.4776396 0.4776396 0.4776396 0.4776396 0.4776396 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 3.855234 3.855234 5.458739 5.458739 5.458739 7.676351 0.3411712 0.3411712 0.3411712 0.3411712 0.4776396 0.4776396 0.4776396 0.4776396 0.6823423 0.6823423 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 3.855234 3.855234 3.855234 3.855234 3.855234 3.855234 3.855234 5.458739 5.458739 5.458739 7.676351 21.83496 0.4776396 0.4776396 0.4776396 0.4776396 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.6823423 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.364685 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 3.855234 3.855234 3.855234 0.4776396 0.4776396 0.4776396 0.4776396 0.4776396 0.4776396 0.4776396 0.6823423 0.6823423 0.6823423 0.6823423 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 0.9723378 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 1.927617 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 2.729369 3.855234 3.855234 3.855234 3.855234 3.855234 7.676351 10.91748</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="co"># Calculate total bedload transport over one day (24 hours) for D50 and D84</span></span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a>total_bedload_D50 <span class="ot">&lt;-</span> <span class="fu">sum</span>(bedload_transport_D50) <span class="sc">*</span> <span class="dv">86400</span>  <span class="co"># for 24 hours</span></span>
+<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a>total_bedload_D84 <span class="ot">&lt;-</span> <span class="fu">sum</span>(bedload_transport_D84) <span class="sc">*</span> <span class="dv">86400</span>  <span class="co"># for 24 hours</span></span>
+<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total bedload transport for D50 over one day (kg/m):&quot;</span>, total_bedload_D50, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Total bedload transport for D50 over one day (kg/m): 41570564</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total bedload transport for D84 over one day (kg/m):&quot;</span>, total_bedload_D84, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Total bedload transport for D84 over one day (kg/m): 52986722</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="co"># Constants and parameters</span></span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fl">9.81</span>                  <span class="co"># Gravitational acceleration (m/s²)</span></span>
+<span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a>kappa <span class="ot">&lt;-</span> <span class="fl">0.41</span>              <span class="co"># von Karman constant</span></span>
+<span id="cb36-4"><a href="#cb36-4" tabindex="-1"></a>Ca <span class="ot">&lt;-</span> <span class="dv">1200</span> <span class="sc">/</span> <span class="fl">1e6</span>           <span class="co"># Concentration at reference height in kg/m³ (1200 mg/L to kg/m³)</span></span>
+<span id="cb36-5"><a href="#cb36-5" tabindex="-1"></a>z_ref <span class="ot">&lt;-</span> <span class="fl">0.05</span>              <span class="co"># Reference height in meters (5 cm)</span></span>
+<span id="cb36-6"><a href="#cb36-6" tabindex="-1"></a>channel_depth <span class="ot">&lt;-</span> <span class="fl">3.0</span>       <span class="co"># Total depth of the channel in meters (example value)</span></span>
+<span id="cb36-7"><a href="#cb36-7" tabindex="-1"></a>num_slices <span class="ot">&lt;-</span> <span class="dv">100</span>          <span class="co"># Number of depth slices for integration</span></span>
+<span id="cb36-8"><a href="#cb36-8" tabindex="-1"></a></span>
+<span id="cb36-9"><a href="#cb36-9" tabindex="-1"></a><span class="co"># Constants for ws-settling velocity calculation</span></span>
+<span id="cb36-10"><a href="#cb36-10" tabindex="-1"></a>rho_s <span class="ot">&lt;-</span> <span class="dv">2650</span>         <span class="co"># Sediment density (kg/m³)</span></span>
+<span id="cb36-11"><a href="#cb36-11" tabindex="-1"></a>rho <span class="ot">&lt;-</span> <span class="dv">1000</span>           <span class="co"># Water density (kg/m³)</span></span>
+<span id="cb36-12"><a href="#cb36-12" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fl">0.187</span> <span class="sc">/</span> <span class="dv">1000</span>     <span class="co"># Particle diameter in meters (0.187 mm)</span></span>
+<span id="cb36-13"><a href="#cb36-13" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fl">9.81</span>             <span class="co"># Gravitational acceleration (m/s²)</span></span>
+<span id="cb36-14"><a href="#cb36-14" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fl">0.001</span>           <span class="co"># Dynamic viscosity of water (Pa·s)</span></span>
+<span id="cb36-15"><a href="#cb36-15" tabindex="-1"></a></span>
+<span id="cb36-16"><a href="#cb36-16" tabindex="-1"></a><span class="co"># Calculate settling velocity (ws) using Stokes&#39; law</span></span>
+<span id="cb36-17"><a href="#cb36-17" tabindex="-1"></a>ws <span class="ot">&lt;-</span> ((rho_s <span class="sc">-</span> rho) <span class="sc">*</span> g <span class="sc">*</span> D<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> (<span class="dv">18</span> <span class="sc">*</span> mu)</span>
+<span id="cb36-18"><a href="#cb36-18" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Settling velocity (ws):&quot;</span>, ws, <span class="st">&quot;m/s</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Settling velocity (ws): 0.03144587 m/s</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="co"># Parameters from previous calculations</span></span>
+<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a>u_star <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(g <span class="sc">*</span> R <span class="sc">*</span> slope)  <span class="co"># Shear velocity </span></span>
+<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a>z0 <span class="ot">&lt;-</span> <span class="fl">3.5</span> <span class="sc">*</span> D84_m <span class="sc">/</span> <span class="fl">12.2</span>       <span class="co"># Roughness height based on D84</span></span>
+<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a>Ro <span class="ot">&lt;-</span> ws <span class="sc">/</span> (kappa <span class="sc">*</span> u_star)    <span class="co"># Rouse number </span></span>
+<span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" tabindex="-1"></a><span class="co"># Define concentration profile function based on Rouse equation</span></span>
+<span id="cb38-7"><a href="#cb38-7" tabindex="-1"></a>concentration_profile <span class="ot">&lt;-</span> <span class="cf">function</span>(z) {</span>
+<span id="cb38-8"><a href="#cb38-8" tabindex="-1"></a>  Ca <span class="sc">*</span> (z_ref <span class="sc">/</span> z)<span class="sc">^</span>Ro</span>
+<span id="cb38-9"><a href="#cb38-9" tabindex="-1"></a>}</span>
+<span id="cb38-10"><a href="#cb38-10" tabindex="-1"></a></span>
+<span id="cb38-11"><a href="#cb38-11" tabindex="-1"></a><span class="co"># Define velocity profile function</span></span>
+<span id="cb38-12"><a href="#cb38-12" tabindex="-1"></a>velocity_profile <span class="ot">&lt;-</span> <span class="cf">function</span>(z) {</span>
+<span id="cb38-13"><a href="#cb38-13" tabindex="-1"></a>  u_star <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> kappa) <span class="sc">*</span> <span class="fu">log</span>(z <span class="sc">/</span> z0)</span>
+<span id="cb38-14"><a href="#cb38-14" tabindex="-1"></a>}</span>
+<span id="cb38-15"><a href="#cb38-15" tabindex="-1"></a></span>
+<span id="cb38-16"><a href="#cb38-16" tabindex="-1"></a><span class="co"># Discretize depth into slices</span></span>
+<span id="cb38-17"><a href="#cb38-17" tabindex="-1"></a>slice_heights <span class="ot">&lt;-</span> <span class="fu">seq</span>(z0, channel_depth, <span class="at">length.out =</span> num_slices)</span>
+<span id="cb38-18"><a href="#cb38-18" tabindex="-1"></a>slice_thickness <span class="ot">&lt;-</span> <span class="fu">diff</span>(slice_heights)[<span class="dv">1</span>]  <span class="co"># Uniform slice thickness</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="co"># Initialize total sediment flux</span></span>
+<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a>total_flux <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a><span class="co"># Loop through each slice and calculate flux</span></span>
+<span id="cb39-5"><a href="#cb39-5" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(num_slices <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb39-6"><a href="#cb39-6" tabindex="-1"></a>  <span class="co"># Mid-point of each slice for better approximation</span></span>
+<span id="cb39-7"><a href="#cb39-7" tabindex="-1"></a>  z_mid <span class="ot">&lt;-</span> (slice_heights[i] <span class="sc">+</span> slice_heights[i <span class="sc">+</span> <span class="dv">1</span>]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb39-8"><a href="#cb39-8" tabindex="-1"></a>  </span>
+<span id="cb39-9"><a href="#cb39-9" tabindex="-1"></a>  <span class="co"># Concentration and velocity at the mid-point</span></span>
+<span id="cb39-10"><a href="#cb39-10" tabindex="-1"></a>  concentration <span class="ot">&lt;-</span> <span class="fu">concentration_profile</span>(z_mid)</span>
+<span id="cb39-11"><a href="#cb39-11" tabindex="-1"></a>  velocity <span class="ot">&lt;-</span> <span class="fu">velocity_profile</span>(z_mid)</span>
+<span id="cb39-12"><a href="#cb39-12" tabindex="-1"></a>  </span>
+<span id="cb39-13"><a href="#cb39-13" tabindex="-1"></a>  <span class="co"># Flux for this slice</span></span>
+<span id="cb39-14"><a href="#cb39-14" tabindex="-1"></a>  flux_slice <span class="ot">&lt;-</span> concentration <span class="sc">*</span> velocity <span class="sc">*</span> slice_thickness</span>
+<span id="cb39-15"><a href="#cb39-15" tabindex="-1"></a>  total_flux <span class="ot">&lt;-</span> total_flux <span class="sc">+</span> flux_slice</span>
+<span id="cb39-16"><a href="#cb39-16" tabindex="-1"></a>}</span>
+<span id="cb39-17"><a href="#cb39-17" tabindex="-1"></a></span>
+<span id="cb39-18"><a href="#cb39-18" tabindex="-1"></a><span class="co"># Convert to kg/day by multiplying with cross-sectional area and seconds per day</span></span>
+<span id="cb39-19"><a href="#cb39-19" tabindex="-1"></a>cross_sectional_area <span class="ot">&lt;-</span> total_area   </span>
+<span id="cb39-20"><a href="#cb39-20" tabindex="-1"></a>total_flux_kg_day <span class="ot">&lt;-</span> total_flux <span class="sc">*</span> cross_sectional_area <span class="sc">*</span> <span class="dv">86400</span> <span class="co"># number of seconds in a day (86,400)</span></span>
+<span id="cb39-21"><a href="#cb39-21" tabindex="-1"></a></span>
+<span id="cb39-22"><a href="#cb39-22" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total suspended sand transport (kg/day):&quot;</span>, total_flux_kg_day, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Total suspended sand transport (kg/day): 50260.09</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="co"># Constants and parameters</span></span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fl">9.85</span>                    <span class="co"># Channel width in meters </span></span>
+<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fl">9.81</span>                   <span class="co"># Gravitational acceleration (m/s²)</span></span>
+<span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a>kappa <span class="ot">&lt;-</span> <span class="fl">0.41</span>               <span class="co"># von Karman constant</span></span>
+<span id="cb41-5"><a href="#cb41-5" tabindex="-1"></a>Ca <span class="ot">&lt;-</span> <span class="dv">1200</span> <span class="sc">/</span> <span class="fl">1e6</span>            <span class="co"># Concentration at reference height in kg/m³ (1200 mg/L to kg/m³)</span></span>
+<span id="cb41-6"><a href="#cb41-6" tabindex="-1"></a>z_ref <span class="ot">&lt;-</span> <span class="fl">0.05</span>               <span class="co"># Reference height in meters (5 cm)</span></span>
+<span id="cb41-7"><a href="#cb41-7" tabindex="-1"></a>channel_depth <span class="ot">&lt;-</span> <span class="fl">3.0</span>        <span class="co"># Total depth of the channel in meters</span></span>
+<span id="cb41-8"><a href="#cb41-8" tabindex="-1"></a>num_slices <span class="ot">&lt;-</span> <span class="dv">100</span>           <span class="co"># Number of depth slices for integration</span></span>
+<span id="cb41-9"><a href="#cb41-9" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="#cb41-10" tabindex="-1"></a><span class="co"># Parameters from previous calculations</span></span>
+<span id="cb41-11"><a href="#cb41-11" tabindex="-1"></a>u_star <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(g <span class="sc">*</span> R <span class="sc">*</span> slope)  <span class="co"># Shear velocity </span></span>
+<span id="cb41-12"><a href="#cb41-12" tabindex="-1"></a>z0 <span class="ot">&lt;-</span> <span class="fl">3.5</span> <span class="sc">*</span> D84_m <span class="sc">/</span> <span class="fl">12.2</span>       <span class="co"># Roughness height based on D84</span></span>
+<span id="cb41-13"><a href="#cb41-13" tabindex="-1"></a>Ro <span class="ot">&lt;-</span> ws <span class="sc">/</span> (kappa <span class="sc">*</span> u_star)    <span class="co"># Rouse number</span></span>
+<span id="cb41-14"><a href="#cb41-14" tabindex="-1"></a></span>
+<span id="cb41-15"><a href="#cb41-15" tabindex="-1"></a><span class="co"># Define concentration profile function based on Rouse equation</span></span>
+<span id="cb41-16"><a href="#cb41-16" tabindex="-1"></a>concentration_profile <span class="ot">&lt;-</span> <span class="cf">function</span>(z) {</span>
+<span id="cb41-17"><a href="#cb41-17" tabindex="-1"></a>  Ca <span class="sc">*</span> (z_ref <span class="sc">/</span> z)<span class="sc">^</span>Ro</span>
+<span id="cb41-18"><a href="#cb41-18" tabindex="-1"></a>}</span>
+<span id="cb41-19"><a href="#cb41-19" tabindex="-1"></a></span>
+<span id="cb41-20"><a href="#cb41-20" tabindex="-1"></a><span class="co"># Define velocity profile function (logarithmic)</span></span>
+<span id="cb41-21"><a href="#cb41-21" tabindex="-1"></a>velocity_profile <span class="ot">&lt;-</span> <span class="cf">function</span>(z) {</span>
+<span id="cb41-22"><a href="#cb41-22" tabindex="-1"></a>  u_star <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> kappa) <span class="sc">*</span> <span class="fu">log</span>(z <span class="sc">/</span> z0)</span>
+<span id="cb41-23"><a href="#cb41-23" tabindex="-1"></a>}</span>
+<span id="cb41-24"><a href="#cb41-24" tabindex="-1"></a></span>
+<span id="cb41-25"><a href="#cb41-25" tabindex="-1"></a><span class="co"># Discretize depth into slices</span></span>
+<span id="cb41-26"><a href="#cb41-26" tabindex="-1"></a>slice_heights <span class="ot">&lt;-</span> <span class="fu">seq</span>(z0, channel_depth, <span class="at">length.out =</span> num_slices)</span>
+<span id="cb41-27"><a href="#cb41-27" tabindex="-1"></a>slice_thickness <span class="ot">&lt;-</span> <span class="fu">diff</span>(slice_heights)[<span class="dv">1</span>]  <span class="co"># Uniform slice thickness</span></span>
+<span id="cb41-28"><a href="#cb41-28" tabindex="-1"></a></span>
+<span id="cb41-29"><a href="#cb41-29" tabindex="-1"></a><span class="co"># Initialize total sediment flux per unit width</span></span>
+<span id="cb41-30"><a href="#cb41-30" tabindex="-1"></a>q_s <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-31"><a href="#cb41-31" tabindex="-1"></a></span>
+<span id="cb41-32"><a href="#cb41-32" tabindex="-1"></a><span class="co"># Loop through each slice and calculate concentration * velocity at the midpoint</span></span>
+<span id="cb41-33"><a href="#cb41-33" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(num_slices <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb41-34"><a href="#cb41-34" tabindex="-1"></a>  <span class="co"># Midpoint of each slice for better approximation</span></span>
+<span id="cb41-35"><a href="#cb41-35" tabindex="-1"></a>  z_mid <span class="ot">&lt;-</span> (slice_heights[i] <span class="sc">+</span> slice_heights[i <span class="sc">+</span> <span class="dv">1</span>]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb41-36"><a href="#cb41-36" tabindex="-1"></a>  </span>
+<span id="cb41-37"><a href="#cb41-37" tabindex="-1"></a>  <span class="co"># Calculate concentration and velocity at the midpoint</span></span>
+<span id="cb41-38"><a href="#cb41-38" tabindex="-1"></a>  concentration <span class="ot">&lt;-</span> <span class="fu">concentration_profile</span>(z_mid)</span>
+<span id="cb41-39"><a href="#cb41-39" tabindex="-1"></a>  velocity <span class="ot">&lt;-</span> <span class="fu">velocity_profile</span>(z_mid)</span>
+<span id="cb41-40"><a href="#cb41-40" tabindex="-1"></a>  </span>
+<span id="cb41-41"><a href="#cb41-41" tabindex="-1"></a>  <span class="co"># Flux contribution for this slice</span></span>
+<span id="cb41-42"><a href="#cb41-42" tabindex="-1"></a>  flux_slice <span class="ot">&lt;-</span> concentration <span class="sc">*</span> velocity <span class="sc">*</span> slice_thickness</span>
+<span id="cb41-43"><a href="#cb41-43" tabindex="-1"></a>  q_s <span class="ot">&lt;-</span> q_s <span class="sc">+</span> flux_slice</span>
+<span id="cb41-44"><a href="#cb41-44" tabindex="-1"></a>}</span>
+<span id="cb41-45"><a href="#cb41-45" tabindex="-1"></a></span>
+<span id="cb41-46"><a href="#cb41-46" tabindex="-1"></a><span class="co"># Scale by channel width to get total suspended load flux Q_s</span></span>
+<span id="cb41-47"><a href="#cb41-47" tabindex="-1"></a>Q_s <span class="ot">&lt;-</span> w <span class="sc">*</span> q_s</span>
+<span id="cb41-48"><a href="#cb41-48" tabindex="-1"></a></span>
+<span id="cb41-49"><a href="#cb41-49" tabindex="-1"></a><span class="co"># Convert to kg/day by multiplying by seconds per day</span></span>
+<span id="cb41-50"><a href="#cb41-50" tabindex="-1"></a>Q_s_kg_day <span class="ot">&lt;-</span> Q_s <span class="sc">*</span> <span class="dv">86400</span></span>
+<span id="cb41-51"><a href="#cb41-51" tabindex="-1"></a></span>
+<span id="cb41-52"><a href="#cb41-52" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total suspended sand transport (Q_s) in kg/day:&quot;</span>, Q_s_kg_day, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Total suspended sand transport (Q_s) in kg/day: 12891.4</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="co"># Constants and parameters</span></span>
+<span id="cb43-2"><a href="#cb43-2" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fl">3.0</span>                      <span class="co"># Total water depth in meters</span></span>
+<span id="cb43-3"><a href="#cb43-3" tabindex="-1"></a>z_ref <span class="ot">&lt;-</span> <span class="fl">0.05</span>                 <span class="co"># Reference height (m)</span></span>
+<span id="cb43-4"><a href="#cb43-4" tabindex="-1"></a>Ca <span class="ot">&lt;-</span> <span class="dv">1200</span> <span class="sc">/</span> <span class="fl">1e6</span>              <span class="co"># Concentration at reference height in kg/m³</span></span>
+<span id="cb43-5"><a href="#cb43-5" tabindex="-1"></a>Ro <span class="ot">&lt;-</span> ws <span class="sc">/</span> (kappa <span class="sc">*</span> u_star)   <span class="co"># Rouse number</span></span>
+<span id="cb43-6"><a href="#cb43-6" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" tabindex="-1"></a><span class="co"># Define a function for concentration profile based on Rouse equation</span></span>
+<span id="cb43-8"><a href="#cb43-8" tabindex="-1"></a>concentration_profile <span class="ot">&lt;-</span> <span class="cf">function</span>(z, h, a, Ro) {</span>
+<span id="cb43-9"><a href="#cb43-9" tabindex="-1"></a>  (h <span class="sc">-</span> z) <span class="sc">/</span> z <span class="sc">*</span> (a <span class="sc">/</span> (h <span class="sc">-</span> a))<span class="sc">^</span>Ro</span>
+<span id="cb43-10"><a href="#cb43-10" tabindex="-1"></a>}</span>
+<span id="cb43-11"><a href="#cb43-11" tabindex="-1"></a></span>
+<span id="cb43-12"><a href="#cb43-12" tabindex="-1"></a><span class="co"># Generate a sequence of depths from z_ref to h</span></span>
+<span id="cb43-13"><a href="#cb43-13" tabindex="-1"></a>z_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(z_ref, h, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb43-14"><a href="#cb43-14" tabindex="-1"></a>C_Ca_values <span class="ot">&lt;-</span> <span class="fu">concentration_profile</span>(z_values, h, z_ref, Ro)</span>
+<span id="cb43-15"><a href="#cb43-15" tabindex="-1"></a></span>
+<span id="cb43-16"><a href="#cb43-16" tabindex="-1"></a><span class="co"># Plot normalized concentration profile</span></span>
+<span id="cb43-17"><a href="#cb43-17" tabindex="-1"></a><span class="fu">plot</span>(C_Ca_values, z_values <span class="sc">/</span> h, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb43-18"><a href="#cb43-18" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;C / Ca&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;z / H&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Concentration Profile with Depth&quot;</span>)</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="co"># Constants and parameters</span></span>
+<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fl">3.0</span>                      <span class="co"># Total water depth in meters</span></span>
+<span id="cb44-3"><a href="#cb44-3" tabindex="-1"></a>z_ref <span class="ot">&lt;-</span> <span class="fl">0.05</span>                 <span class="co"># Reference height (m)</span></span>
+<span id="cb44-4"><a href="#cb44-4" tabindex="-1"></a>Ca <span class="ot">&lt;-</span> <span class="dv">1200</span> <span class="sc">/</span> <span class="fl">1e6</span>              <span class="co"># Concentration at reference height in kg/m³</span></span>
+<span id="cb44-5"><a href="#cb44-5" tabindex="-1"></a>Ro <span class="ot">&lt;-</span> ws <span class="sc">/</span> (kappa <span class="sc">*</span> u_star)   <span class="co"># Rouse number </span></span>
+<span id="cb44-6"><a href="#cb44-6" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="#cb44-7" tabindex="-1"></a><span class="co"># Define a function for concentration profile based on Rouse equation</span></span>
+<span id="cb44-8"><a href="#cb44-8" tabindex="-1"></a>concentration_profile <span class="ot">&lt;-</span> <span class="cf">function</span>(z, h, a, Ro) {</span>
+<span id="cb44-9"><a href="#cb44-9" tabindex="-1"></a>  (h <span class="sc">-</span> z) <span class="sc">/</span> z <span class="sc">*</span> (a <span class="sc">/</span> (h <span class="sc">-</span> a))<span class="sc">^</span>Ro</span>
+<span id="cb44-10"><a href="#cb44-10" tabindex="-1"></a>}</span>
+<span id="cb44-11"><a href="#cb44-11" tabindex="-1"></a></span>
+<span id="cb44-12"><a href="#cb44-12" tabindex="-1"></a><span class="co"># Generate a sequence of depths from z_ref to h</span></span>
+<span id="cb44-13"><a href="#cb44-13" tabindex="-1"></a>z_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(z_ref, h, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb44-14"><a href="#cb44-14" tabindex="-1"></a>C_Ca_values <span class="ot">&lt;-</span> <span class="fu">concentration_profile</span>(z_values, h, z_ref, Ro)</span>
+<span id="cb44-15"><a href="#cb44-15" tabindex="-1"></a></span>
+<span id="cb44-16"><a href="#cb44-16" tabindex="-1"></a><span class="co"># Plot normalized concentration profile</span></span>
+<span id="cb44-17"><a href="#cb44-17" tabindex="-1"></a><span class="fu">plot</span>(C_Ca_values, z_values <span class="sc">/</span> h, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb44-18"><a href="#cb44-18" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;C / Ca&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;z / H&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Concentration Profile with Depth&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" tabindex="-1"></a><span class="co"># Empirical constants (example values)</span></span>
+<span id="cb45-2"><a href="#cb45-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">0.1</span>   <span class="co"># coefficient</span></span>
+<span id="cb45-3"><a href="#cb45-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">1.7</span>   <span class="co"># exponent (for fine sediment discharge)</span></span>
+<span id="cb45-4"><a href="#cb45-4" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="#cb45-5" tabindex="-1"></a><span class="co"># Generate a range of flow discharge values</span></span>
+<span id="cb45-6"><a href="#cb45-6" tabindex="-1"></a>Q_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="at">by =</span> <span class="dv">1</span>)  <span class="co"># Discharge values in m³/s</span></span>
+<span id="cb45-7"><a href="#cb45-7" tabindex="-1"></a>Qs_values <span class="ot">&lt;-</span> a <span class="sc">*</span> Q_values<span class="sc">^</span>b     <span class="co"># Calculate Qs for each Q</span></span>
+<span id="cb45-8"><a href="#cb45-8" tabindex="-1"></a></span>
+<span id="cb45-9"><a href="#cb45-9" tabindex="-1"></a><span class="co"># Plot sediment discharge vs flow discharge</span></span>
+<span id="cb45-10"><a href="#cb45-10" tabindex="-1"></a><span class="fu">plot</span>(Q_values, Qs_values, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb45-11"><a href="#cb45-11" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Flow Discharge (Q, m³/s)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Sediment Discharge (Q_s, metric tons/event)&quot;</span>,</span>
+<span id="cb45-12"><a href="#cb45-12" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Sediment Discharge vs Flow Discharge&quot;</span>)</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+
+</body>
+</html>
